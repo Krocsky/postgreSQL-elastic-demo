@@ -1,0 +1,7 @@
+{
+  "name": "API 文档名称",
+  "version": "0.1.0",
+  "description": "API 文档描述",
+  "title": "API 文档标题",
+  "url": "://host:port/http"
+}

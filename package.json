@@ -1,0 +1,50 @@
+{
+  "name": "postgreSQL-elasticsearch-demo",
+  "version": "0.1.0",
+  "description": "test database relationship for postgreSQL and elasticsearch",
+  "main": "src/entry.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cybereits/db_postgres.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2 start config/pm2.json",
+    "lint": "bash eslint.sh",
+    "sync-seedall": "node_modules/.bin/sequelize db:seed:all",
+    "sync-database": "node tasks/sync_database.js && npm run sync-seedall",
+    "migration": "node_modules/.bin/sequelize db:migrate",
+    "doc": "apidoc -i src/ -o doc/",
+    "stop": "pm2 delete db_postgres",
+    "log": "pm2 log db_postgres",
+    "restart": "pm2 restart db_postgres"
+  },
+  "dependencies": {
+    "@cybereits/ccl": "^0.1.1",
+    "@cybereits/express-middlewares": "^0.1.3",
+    "@cybereits/lib-elk-logger": "^0.1.1",
+    "@cybereits/lib-es-client": "^0.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "chinese-random-name": "^0.1.3",
+    "chinese-random-skill": "0.0.3-rdm",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "fakerator": "^0.3.0",
+    "node-eth-address": "^0.1.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "redis": "^2.8.0",
+    "sequelize": "^4.36.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.18.2",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-compat": "^2.2.0",
+    "mocha": "^5.1.1"
+  }
+}

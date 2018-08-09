@@ -1,0 +1,1 @@
+./node_modules/.bin/eslint src core config framework database --fix

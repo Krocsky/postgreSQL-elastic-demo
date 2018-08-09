@@ -1,0 +1,21 @@
+{
+  "name": "db_postgres",
+  "instances": 1,
+  "cwd": "./",
+  "merge_logs": true,
+  "error_file": "logs/err.log",
+  "out_file": "logs/out.log",
+  "log_date_format": "YYYY-MM-DD HH:mm:ss",
+  "script": "./src/entry.js",
+  "watch": [
+    "config",
+    "core",
+    "database",
+    "framework",
+    "src"
+  ],
+  "ignore_watch": [
+    "node_modules",
+    "logs"
+  ]
+}
